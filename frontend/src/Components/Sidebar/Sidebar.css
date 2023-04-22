@@ -17,11 +17,12 @@
     cursor: pointer;
 }
 .List{
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 .icon{
     margin-left: 1rem;
     margin-right: 1.5rem;
+    
 }
 .logoutbtn{
     width: 11rem;
