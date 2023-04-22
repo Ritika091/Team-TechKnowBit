@@ -12,7 +12,7 @@
 border: 1px solid white;
 background: #fff;
 width: 22rem;
-height: 27rem;
+height: 31rem;
 transform: translate(-50%, -50%);
 position: absolute;
 top: 50%;
@@ -67,9 +67,16 @@ left: 75%;
 }
 .Or{
     display: block;
-    width: 18px;
+    width: 40px;
     background-color: #fff;
-    font-size: 20px;
-    margin-top: -27px;
+    font-size: 15px;
+    margin-top: -23px;
     margin-left: 10rem;
+}
+hr{
+    width: 18rem;
+}
+.message1{
+    text-align: center;
+    color: red;
 }

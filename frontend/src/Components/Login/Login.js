@@ -50,7 +50,7 @@ export default function Login() {
                     Sign in with Google </button>
             </div>
             <hr />
-        <span className='Or'>or</span>
+        <span className='Or'>&nbsp;&nbsp;OR</span>
             <p className='message'>{message}</p>
         <div>
            <input type="email" name='email' id='email' placeholder='Enter email' onChange={(e)=>{setEmail(e.target.value)}}/>
