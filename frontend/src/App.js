@@ -6,6 +6,8 @@ import Home from './Components/Home/Home';
 import Logout from './Components/Logout/Logout';
 import Search from './Components/Search/Search';
 import { useEffect, useState } from 'react';
+import Audio from './Components/Audio/Audio';
+import Video from './Components/Video/Video';
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
         <Route exact path='/signup' element={<SignUp/>}></Route>
         <Route exact path='/logout' element={<Logout/>}></Route>
         <Route exact path='/search' element={<Search/>}></Route>
+        <Route exact path='/create/audio' element={<Audio/>}></Route>
+        <Route exact path='/create/video' element={<Video/>}></Route>
       </Routes>
     </div>
   );
