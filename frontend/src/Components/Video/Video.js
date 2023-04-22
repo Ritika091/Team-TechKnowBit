@@ -56,6 +56,7 @@ addVideoPodcast();
     <div className='Video'>
       
         <Sidebar/>
+        <div className="right_part">
        <UpperNav/>
        <div className="video_details">
        <div className="vid_left">
@@ -91,6 +92,7 @@ addVideoPodcast();
                
        </div>
         </div>
+     </div>
      </div>
   )
 }

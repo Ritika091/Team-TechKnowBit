@@ -55,7 +55,7 @@ addAudioPodcast();
   return (
     <div className='Audio'>
         <Sidebar/>
-        
+        <div className="right_part">
        <UpperNav/>
        <div className="audio_details">
        <div className="aud_left">
@@ -92,6 +92,7 @@ addAudioPodcast();
        </div>
        
         </div>
+     </div>
      </div>
   )
 }

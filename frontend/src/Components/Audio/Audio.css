@@ -1,11 +1,11 @@
 .Audio{
     display: flex;
     background-color: rgb(232, 237, 241);
-
+overflow-x: hidden;
 }
 
 .audio_details{
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     justify-content: center;
     align-items: center;
     display: flex;
@@ -16,7 +16,7 @@ h2 {
     margin-top: 10;
 }
 
-input[type="text"],
+.aud_left input[type="text"],
 textarea,
 select {
   width: 200%;

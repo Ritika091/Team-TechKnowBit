@@ -1,3 +1,7 @@
 .Home{
     display: flex ;
 }
+.home_rightcontent{
+    display: flex;
+    flex-direction: column;
+}
