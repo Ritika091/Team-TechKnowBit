@@ -6,11 +6,15 @@ const {secretKey}=require('../keys')
 const USERS=mongoose.model('USERS')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
+const validator=require('validator')
 router.use(cors())
 router.post('/signup',(req,res)=>{
     const{email,userName,password}=req.body;
     if(!email || !userName || !password){
         return res.status(422).json({error:'One or more fields are missing'})
+    }
+    if(!validator.isEmail(email)){
+        return res.status(422).json({error:'Not a valid email address'})
     }
     USERS.findOne({$or:[{email:email},{userName:userName}]}).then((savedUser)=>{
         if(savedUser){
