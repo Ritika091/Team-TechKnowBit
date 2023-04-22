@@ -3,6 +3,7 @@
     position: fixed;
     right: 0;
     width: 84.75vw;
+    display: flex;
     background-color: rgb(148, 224, 244);
 }
 .album_cover {
@@ -27,4 +28,13 @@
 .track-info span{
     color: rgb(0, 0, 0);
     
+}
+.resume{
+    margin-top: 1.5rem;
+    margin-left: 28rem;
+}
+.Progress{
+    margin-top: 4.5rem;
+    margin-left: -28rem;
+    width: 50rem;
 }
