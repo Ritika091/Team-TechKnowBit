@@ -1,0 +1,9 @@
+.Body{
+    margin-left: 15rem;
+}
+.all_podcasts{
+    display: flex;
+}
+.podcast_audio{
+    padding: 1rem 2rem;
+}

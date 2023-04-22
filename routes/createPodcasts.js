@@ -10,7 +10,7 @@ router.get('/podcasts',VerifyLogin,(req,res)=>{
     .sort({id:-1})
     .then(data=>
         {
-            return res.status(200).send({data:data})
+            return res.status(200).json(data)
         })
         .catch(err=>console.log(err))
 })
