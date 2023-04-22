@@ -25,8 +25,10 @@ export default function Audio() {
       };
   return (
     <div className='Audio'>
+      <div className="left_part">
         <Sidebar/>
-        <div className="right_part">
+        </div>
+        {/* <div className="right_part"> */}
        <UpperNav/>
        <div className="audio_details">
        <div>
@@ -58,6 +60,6 @@ export default function Audio() {
                </div>
        </div>
         </div>
-    </div>
+    // </div>
   )
 }

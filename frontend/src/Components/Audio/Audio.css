@@ -1,10 +1,6 @@
 .Audio{
     display: flex;
 }
-.right_part{
-    border: 2px solid red;
-    width: 100%;
-}
 .audio_details{
     margin-top: 6rem;
 }

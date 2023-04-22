@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
 import { Link } from 'react-router-dom';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Dropdown from './Dropdown'
 
 export default function Sidebar() {
   return (
@@ -25,10 +26,11 @@ export default function Sidebar() {
             </Link>  
             <li>
                 <AddCircleIcon className='icon'/>
-                Create
+                {/* Create */}
             </li>
+            <Dropdown/>
             <li>
-                <ThumbUpOffAltOutlinedIcon className='icon'/>
+                <ThumbUpOffAltOutlinedIcon className='icon' />
                 My Likes
             </li>
         </ul>
