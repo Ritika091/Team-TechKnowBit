@@ -48,7 +48,7 @@ export default function SignUp() {
                     Sign up with Google </button>
             </div>
             <hr />
-        <span className='Or'>or</span>
+        <span className='Or'>&nbsp;&nbsp;OR</span>
 
        <p className='signup'>{message}</p>
             <div>

@@ -67,9 +67,12 @@ left: 75%;
 }
 .Or{
     display: block;
-    width: 18px;
+    width: 40px;
     background-color: #fff;
-    font-size: 20px;
-    margin-top: -27px;
+    font-size: 15px;
+    margin-top: -23px;
     margin-left: 10rem;
+}
+hr{
+    width: 18rem;
 }
