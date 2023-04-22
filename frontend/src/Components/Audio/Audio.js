@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Audio.css'
 import Sidebar from '../Sidebar/Sidebar'
 import UpperNav from '../UpperNav/UpperNav'
 
 export default function Audio() {
+    const[audioUrl,setAudioUrl]=useState('');
+    const[audio,setAudio]=useState('');
+    const getPostDetails = () => {
+        console.log(audio);
+        const data = new FormData();
+        data.append("file", audio);
+        data.append("upload_preset", "podcast_app");
+        data.append("cloud_name", "markus0509");
+        fetch("https://api.cloudinary.com/v1_1/markus0509/video/upload", {
+          method: "POST",
+          body: data,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setAudioUrl(data.url);
+            console.log(data.url);
+          })
+          .catch((err) => console.log(err));
+      };
   return (
     <div className='Audio'>
         <Sidebar/>
@@ -32,10 +51,10 @@ export default function Audio() {
                </div>
                <div>
                <h2>Choose a file</h2>
-               <input type="file" accept='audio/*'/>
+               <input type="file" accept='audio/*' onChange={(e)=>setAudio(e.target.files[0])}/>
                </div>
                <div>
-               <button>Create</button>
+               <button onClick={()=>getPostDetails()}>Create</button>
                </div>
        </div>
         </div>
