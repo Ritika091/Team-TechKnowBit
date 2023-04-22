@@ -3,28 +3,7 @@
     width: 100vw;
     height: 12vh;
 }
-.Search{
-    display: flex;
-    background: rgb(255, 255, 255);
-    width: 22rem;
-    border-radius: 4rem;
-    height: 3rem;
-    margin-top: 1rem;
-    margin-left: 4rem;
-}
-.searchIcon{
-    margin-top: 0.8rem;
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
-.Search input[type=text]{
-    width: 15rem;
-    border: none;
-    outline: none;
-    border-radius: 4rem;
-    font-size: 15px;
-}
-.profile{
+.profile1{
     display: flex;
     background: black;
     width: 11rem;
@@ -33,9 +12,9 @@
     height: 2.6rem;
     border-radius: 5rem;
     margin-left: 65rem;
-    margin-top: -3rem;
+    margin-top: 1rem;
 }
-.profile h3{
+.profile1 h3{
     padding: 0 1.2rem;
     margin-top: 15px;
 }

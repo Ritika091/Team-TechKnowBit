@@ -12,14 +12,17 @@ export default function Sidebar() {
     <div className='Sidebar'>
         <img src={logo} alt="" className='Logo' />
         <ul className='List'>
-            <li>
+          <Link to='/'>
+          <li>
                 <HomeIcon className='icon'/>
                 Home
             </li>
-            <li>
-                <SearchIcon className='icon'/>
+            </Link> 
+          <Link to='/search'><li>
+              <SearchIcon className='icon'/>
                 Search
             </li>
+            </Link>  
             <li>
                 <AddCircleIcon className='icon'/>
                 Create

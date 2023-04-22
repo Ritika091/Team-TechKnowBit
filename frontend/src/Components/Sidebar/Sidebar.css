@@ -15,9 +15,13 @@
     font-size: 18px;
     margin-top: 3rem;
     cursor: pointer;
+    text-decoration: none;
 }
 .List{
     margin-top: 5rem;
+}
+.List a{
+    text-decoration: none;
 }
 .icon{
     margin-left: 1rem;

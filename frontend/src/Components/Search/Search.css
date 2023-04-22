@@ -1,0 +1,47 @@
+.Search{
+    display: flex;
+}
+.nav{
+    background-color: rgb(49, 41, 41);
+    width: 100vw;
+    height: 12vh;
+}
+.SearchSec{
+    display: flex;
+    background: rgb(255, 255, 255);
+    width: 22rem;
+    border-radius: 4rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
+}
+.searchIcon{
+    margin-top: 0.8rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+.SearchSec input[type=text]{
+    width: 15rem;
+    border: none;
+    outline: none;
+    border-radius: 4rem;
+    font-size: 15px;
+}
+.profile{
+    display: flex;
+    background: black;
+    width: 11rem;
+    align-items: center;
+    color: white;
+    height: 2.6rem;
+    border-radius: 5rem;
+    margin-left: 65rem;
+    margin-top: -3rem;
+}
+.profile h3{
+    padding: 0 1.2rem;
+    margin-top: 15px;
+}
+.Ava{
+    margin-left: -1px;
+}
