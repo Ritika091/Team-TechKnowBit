@@ -7,6 +7,7 @@ app.use(express.json())
 app.use(cors())
 mongoose.connect(mongoURL)
 require('./models/userModel')
+require('./models/contentModel')
 mongoose.connection.on('connected',()=>{
     console.log('Connected to mongodb')
 })
@@ -14,6 +15,7 @@ mongoose.connection.on('error',()=>{
     console.log('Couldnt connect to mongodb')
 })
 app.use(require('./routes/auth'))
+app.use(require('./routes/createPodcasts'))
 app.get('/',(req,res)=>{
     res.send('Hello');
 })

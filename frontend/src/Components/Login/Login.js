@@ -31,6 +31,7 @@ export default function Login() {
         setMessage(data.message);
         console.log(data)
         localStorage.setItem("jwt",data.token)
+        localStorage.setItem("users",JSON.stringify(data.userDetails))
         Navigate('/');
        console.log(data.message);
   }

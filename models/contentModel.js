@@ -1,0 +1,30 @@
+const mongoose=require('mongoose')
+const PodcastSchema=new mongoose.Schema({
+    title:{
+        type:String,
+        required:true
+    },
+    description:{
+        type:String,
+        required:true
+    }, 
+    category:{
+        type:String,
+        required:true
+    },
+    type:{
+        type:String,
+        required:true
+    },
+    speaker:{
+        type:String,
+        required:true
+    },
+    audioFile:{
+        type:String
+    },
+    videoFile:{
+        type:String
+    }
+})
+mongoose.model('PODCASTS',PodcastSchema)
