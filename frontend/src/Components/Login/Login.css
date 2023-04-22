@@ -76,3 +76,7 @@ left: 75%;
 hr{
     width: 18rem;
 }
+.message{
+    text-align: center;
+    color: red;
+}
