@@ -56,6 +56,9 @@ left: 75%;
     font-size: 15px;
     font-weight: 700;
 }
+.SignUpBtn:hover{
+    background-color: rgb(222, 84, 107); ;
+}
 .acct{
     text-align: center;
 }
