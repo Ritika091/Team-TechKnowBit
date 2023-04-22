@@ -15,7 +15,7 @@ export default function Search() {
        </div>
        <div className="profile">
        <Avatar alt="Remy Sharp" src=""  className='Ava'/>
-       <h3>Username</h3>
+       <h3>{JSON.parse(localStorage.getItem("users")).userName}</h3>
        </div>
     </div>
     </div>

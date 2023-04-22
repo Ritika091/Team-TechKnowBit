@@ -1,14 +1,32 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route, useNavigate} from 'react-router-dom'
 import Login from './Components/Login/Login';
 import SignUp from './Components/Sign Up/SignUp';
 import Home from './Components/Home/Home';
 import Logout from './Components/Logout/Logout';
 import Search from './Components/Search/Search';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const[token,setToken]=useState("")
+  const navigate=useNavigate();
+  const checkToken=()=>{
+    const token=localStorage.getItem('jwt');
+    if(token){
+      console.log('I have token');
+      setToken(token);
+    }
+    else{
+      console.log("I dont have token");
+      navigate('/login')
+    }
+  }
+  useEffect(()=>{
+    checkToken();
+  },[token])
+
   return (
-    <BrowserRouter>
     <div className="App">
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
@@ -18,7 +36,6 @@ function App() {
         <Route exact path='/search' element={<Search/>}></Route>
       </Routes>
     </div>
-    </BrowserRouter>
   );
 }
 
