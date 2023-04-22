@@ -1,9 +1,10 @@
 .UpperNav{
     background: linear-gradient(to right, #201818, #451a1a);
-    width: 100vw;
+    width: 85vw;
     height: 12vh;
     position: fixed;
     top: 0;
+    margin-left: 17.2rem;
 }
 .profile1{
     display: flex;
@@ -13,7 +14,7 @@
     color: white;
     height: 2.6rem;
     border-radius: 5rem;
-    margin-left: 65rem;
+    margin-left: 62rem;
     margin-top: 1rem;
 }
 .profile1 h3{
