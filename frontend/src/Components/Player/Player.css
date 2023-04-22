@@ -1,0 +1,30 @@
+.Player{
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    width: 84.75vw;
+    background-color: rgb(148, 224, 244);
+}
+.album_cover {
+    width: 4.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+.Player_name{
+    display: flex;
+}
+.track-title{
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 0.4rem;
+    font-size: larger;
+}
+.track-info{
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+.track-info span{
+    color: rgb(0, 0, 0);
+    
+}

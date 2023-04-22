@@ -1,11 +1,11 @@
 .UpperNav{
-    background-color: rgba(26, 23, 23, 0.4);
+    background-color: rgb(49, 41, 41);
     width: 100vw;
     height: 12vh;
 }
 .Search{
     display: flex;
-    background: white;
+    background: rgb(255, 255, 255);
     width: 22rem;
     border-radius: 4rem;
     height: 3rem;
