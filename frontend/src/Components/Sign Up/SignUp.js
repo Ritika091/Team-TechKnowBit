@@ -50,7 +50,7 @@ export default function SignUp() {
             <hr />
         <span className='Or'>&nbsp;&nbsp;OR</span>
 
-       <p className='signup'>{message}</p>
+       <p className='message1'>{message}</p>
             <div>
            <input type="name" name='name' id='name' placeholder='Enter username' onChange={(e)=>{setUserName(e.target.value)}} />
          </div>
