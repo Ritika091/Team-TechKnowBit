@@ -65,3 +65,11 @@ left: 75%;
 .logo{
     width: 6rem;
 }
+.Or{
+    display: block;
+    width: 18px;
+    background-color: #fff;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 10rem;
+}
