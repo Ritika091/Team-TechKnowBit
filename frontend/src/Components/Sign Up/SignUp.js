@@ -52,7 +52,7 @@ export default function SignUp() {
 
        <p className='message1'>{message}</p>
             <div>
-           <input type="name" name='name' id='name' placeholder='Enter username' onChange={(e)=>{setUserName(e.target.value)}} />
+           <input type="name" name='name' id='name'  placeholder='Enter username' onChange={(e)=>{setUserName(e.target.value)}} />
          </div>
         <div>
            <input type="email" name='email' id='email' placeholder='Enter email' onChange={(e)=>{setEmail(e.target.value)}}/>

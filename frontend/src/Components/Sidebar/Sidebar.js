@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import './Sidebar.css'
 import SearchIcon from '@mui/icons-material/Search';
 import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
@@ -23,7 +24,7 @@ export default function Sidebar() {
                 My Likes
             </li>
         </ul>
-        <button className='logoutbtn'>Logout</button>
+      <Link to='/logout'> <button className='logoutbtn'>Logout</button></Link> 
     </div>
   )
 }
