@@ -3,8 +3,10 @@ const app=express();
 const mongoose=require('mongoose');
 const {mongoURL}=require('./keys')
 const cors=require('cors')
-app.use(express.json())
+
 app.use(cors())
+app.use(express.json())
+
 mongoose.connect(mongoURL)
 require('./models/userModel')
 require('./models/contentModel')
