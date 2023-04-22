@@ -54,12 +54,11 @@ addVideoPodcast();
       },[videoUrl])
   return (
     <div className='Video'>
-      <div className="left_part">
+      
         <Sidebar/>
-        </div>
-        {/* <div className="right_part"> */}
        <UpperNav/>
        <div className="video_details">
+       <div className="vid_left">
        <div>
      <h2>Title</h2>
        <input type="text" placeholder='Enter the title....' onChange={(e)=>setTitle(e.target.value)}/>
@@ -80,16 +79,18 @@ addVideoPodcast();
              <h2>Speaker</h2>
                <input type="text" placeholder='Enter the speaker....' onChange={(e)=>setSpeaker(e.target.value)}/>
                </div>
-               <div>
+               </div>
+               <div className='vid_right'>
+               <div className="Video-choose" >
                <h2>Choose a file</h2>
                <input type="file" accept='video/*' onChange={(e)=>{setVideo(e.target.files[0]);
             }}/>
                </div>
-               <div>
-               <button onClick={()=>getPostDetails()}>Create</button>
-               </div>
+               
+               <button className='Uploadbtn' onClick={()=>getPostDetails()}>Upload</button>
+               
        </div>
         </div>
-    // </div>
+     </div>
   )
 }

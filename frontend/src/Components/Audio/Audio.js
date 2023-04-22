@@ -54,14 +54,13 @@ addAudioPodcast();
       },[audioUrl])
   return (
     <div className='Audio'>
-      <div className="left_part">
         <Sidebar/>
-        </div>
-        {/* <div className="right_part"> */}
+        
        <UpperNav/>
        <div className="audio_details">
+       <div className="aud_left">
        <div>
-     <h2>Title</h2>
+        <h2>Title</h2>
        <input type="text" placeholder='Enter the title....' onChange={(e)=>setTitle(e.target.value)}/>
        </div>
        <div>
@@ -80,16 +79,19 @@ addAudioPodcast();
              <h2>Speaker</h2>
                <input type="text" placeholder='Enter the speaker....' onChange={(e)=>setSpeaker(e.target.value)}/>
                </div>
-               <div>
+               </div>
+               <div className='Aud_right'>
+               <div className="Audio-choose" >
                <h2>Choose a file</h2>
                <input type="file" accept='audio/*' onChange={(e)=>{setAudio(e.target.files[0]);
             }}/>
                </div>
-               <div>
-               <button onClick={()=>getPostDetails()}>Create</button>
-               </div>
+               
+               <button className="Uploadbtn" onClick={()=>getPostDetails()}>Upload</button>
+               
        </div>
+       
         </div>
-    // </div>
+     </div>
   )
 }
