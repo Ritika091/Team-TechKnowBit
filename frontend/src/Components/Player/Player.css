@@ -4,7 +4,7 @@
     right: 0;
     width: 84.75vw;
     display: flex;
-    background-color: rgb(148, 224, 244);
+    background: linear-gradient(to right, #94e0f4, #2392ed);
 }
 .album_cover {
     width: 4.5rem;
