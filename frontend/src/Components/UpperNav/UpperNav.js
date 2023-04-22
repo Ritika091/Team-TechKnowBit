@@ -12,7 +12,7 @@ export default function UpperNav() {
        </div>
        <div className="profile">
        <Avatar alt="Remy Sharp" src=""  className='Ava'/>
-       <h3>Ritika</h3>
+       <h3>Username</h3>
        </div>
     </div>
   )

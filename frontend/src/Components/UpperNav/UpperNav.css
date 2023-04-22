@@ -27,7 +27,7 @@
 .profile{
     display: flex;
     background: black;
-    width: 9rem;
+    width: 11rem;
     align-items: center;
     color: white;
     height: 2.6rem;
@@ -36,7 +36,8 @@
     margin-top: -3rem;
 }
 .profile h3{
-    padding: 0 1rem;
+    padding: 0 1.2rem;
+    margin-top: 15px;
 }
 .Ava{
     margin-left: -1px;
