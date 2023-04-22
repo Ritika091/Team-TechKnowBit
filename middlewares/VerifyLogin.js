@@ -7,13 +7,13 @@ module.exports=(req,res,next)=>{
     if(!authorization){
         return res.status(422).json({error:'Cant authorize'})
     }
-    const token=authorization.replace('Bearer ','')
+    const token=authorization.replace("Bearer ","")
     jwt.verify(token,secretKey,(err,payload)=>{
         if(err){
         return res.status(422).json({error:'Cant authorize'})
         }
         const{_id}=payload;
-        USERS.findById({_id:_id}).then(data=>{
+        USERS.findById(_id).then(data=>{
             req.user=data
             next();
         })
