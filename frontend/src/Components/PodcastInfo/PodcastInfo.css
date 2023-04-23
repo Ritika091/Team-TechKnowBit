@@ -1,0 +1,52 @@
+.PodcastInfo{
+    display: flex;
+}
+.PodcastDetail{
+    margin-left: 16rem;
+}
+.PodImgDetail img{
+    width: 12rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.PodImgDetail{
+    display: flex;
+    border-radius: 2rem;
+    width: 98%;
+    box-shadow: 0 4px 10px #7e1a1a;
+    background: linear-gradient(to right, #7e1a1a, #de5757);
+    margin-top: 2rem;
+}
+.det p{
+    padding: 0.5rem 3rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+.det h1{
+    font-size: 42px;
+    padding-left: 15rem;
+    color: white;
+}
+.det h3{
+    padding-left: 1rem;
+    color: white;
+}
+.speak{
+    margin-left: 3rem;
+    margin-top: 3.5rem;
+    color: white;
+}
+.cat{
+    margin-top: -2.6rem;
+    padding-left: 11rem;
+    color: white;
+}
+.playIcon{
+    margin-left: 25rem;
+    margin-top: 4rem;
+    font-size: 6rem !important;
+    cursor: pointer;
+    color: white;
+}
