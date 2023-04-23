@@ -11,10 +11,12 @@ import Video from './Components/Video/Video';
 import { createContext } from 'react';
 import PodcastInfo from './Components/PodcastInfo/PodcastInfo';
 import Like from './Components/Like/Like';
-export const UserContext = createContext()
 
+import { useContext } from 'react';
+import { playerContext } from './context';
 
 function App() {
+  const[isplaying,setIsplaying]=useState(false)
   
   const[token,setToken]=useState("")
   const navigate=useNavigate();
@@ -33,6 +35,7 @@ function App() {
   },[token])
 
   return (
+    <playerContext.Provider value={{isplaying,setIsplaying}}>
     <div className="App">
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
@@ -46,6 +49,7 @@ function App() {
         <Route exact path='/like' element={<Like/>}></Route>
       </Routes>
     </div>
+    </playerContext.Provider>
   );
 }
 

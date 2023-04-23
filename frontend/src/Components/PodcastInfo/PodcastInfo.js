@@ -8,11 +8,15 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Player from '../Player/Player';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
-
+import { useContext } from 'react';
+import { playerContext } from '../../context';
 export default function PodcastInfo() {
+    const{setIsplaying}=useContext(playerContext)
+
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
+    const[showPlayer,setShowPlayer]=useState(false);
+    const audioref=useRef();
     console.log(podcastid)
 
     useEffect(()=>{
@@ -95,7 +99,10 @@ export default function PodcastInfo() {
                     <h4 className='speak'>{pod.speaker}</h4>
                     <h4 className='cat'>{pod.category}</h4>
                     </div>
-                    <PlayCircleFilledIcon className='playIcon' />
+                    <PlayCircleFilledIcon className='playIcon' onClick={()=>{setShowPlayer(true);
+                        audioref.current.play();
+                    setIsplaying(true)
+                    }}/>
                 </div>
                 <div className="PostcardDescription">
                     <h1>Description</h1>
@@ -113,7 +120,7 @@ export default function PodcastInfo() {
                 <h2>Listen to this podcast: </h2>
                 {
                     pod.audioFile?
-                    <audio controls>
+                    <audio controls ref={audioref}>
                     <source src={pod.audioFile}/>
                     </audio>
                     :
@@ -126,7 +133,11 @@ export default function PodcastInfo() {
                 }
                 </div>
             </div>
-            <Player data={pod}/>
+            {showPlayer?
+            <Player data={pod} setShowPlayer={setShowPlayer} showPlayer={showPlayer} audioref={audioref}/>
+            :
+            <p></p>
+            }
         </div>
     </div>
   )

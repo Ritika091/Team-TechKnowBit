@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Player.css'
 import thumbnail from '../../assets/podcast.jpg'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import PauseIcon from '@mui/icons-material/Pause';
+import { playerContext } from '../../context';
 
 export default function Player({audioref,showPlayer,setShowPlayer,data}) {
-  const[isplaying,setIsplaying]=useState(false)
+  const{isplaying,setIsplaying}=useContext(playerContext)
 
   const play=()=>{
     audioref.current.play()
