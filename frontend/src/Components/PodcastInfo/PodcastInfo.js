@@ -6,6 +6,8 @@ import UpperNav from '../UpperNav/UpperNav'
 import Pic from '../../assets/podcast.jpg'
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Player from '../Player/Player';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function PodcastInfo() {
     const[pod,setPod]=useState("")
@@ -45,6 +47,10 @@ export default function PodcastInfo() {
                 <div className="PostcardDescription">
                     <h1>Description</h1>
                     <p>{pod.description}</p>
+                </div>
+                <div className="Likes">
+                <FavoriteBorderIcon fontSize='large'/>
+                <FavoriteIcon fontSize='large' color='error'/>
                 </div>
                 <div className="listen">
                 <h2>Listen to this podcast: </h2>
