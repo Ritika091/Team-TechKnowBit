@@ -51,5 +51,13 @@ if(!audioFile && videoFile){
     .catch(err=>console.log(err))
 }
 })
-
+router.get('/podcasts/:podcastId',VerifyLogin,(req,res)=>{
+   PODCASTS.findById({_id:req.params.podcastId})
+   .then(result=>{
+    return res.status(200).json(result)
+   })
+   .catch(err=>{
+    return res.status(404).json({error:'Podcast not found'})
+   })
+})
 module.exports=router
