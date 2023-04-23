@@ -26,6 +26,9 @@ select {
   box-sizing: border-box;
   
 }
+.vid_left textarea{
+    resize: none;
+}
 .vid_left{
     flex-direction: column;
     margin-left: 7rem;

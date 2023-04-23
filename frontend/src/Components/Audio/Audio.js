@@ -66,7 +66,8 @@ addAudioPodcast();
        </div>
        <div>
        <h2>Description</h2>
-         <input type="text" placeholder='Enter the description....' onChange={(e)=>setDescription(e.target.value)}/>
+       <textarea type="text" name="text" id="" cols="30" rows="7" placeholder='Enter the description....' onChange={(e)=>setDescription(e.target.value)}></textarea>
+         {/* <input type="text" placeholder='Enter the description....' onChange={(e)=>setDescription(e.target.value)}/> */}
          </div>
          <div>
          <h2>Category</h2>

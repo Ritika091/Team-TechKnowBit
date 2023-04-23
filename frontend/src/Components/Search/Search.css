@@ -9,7 +9,7 @@
 .SearchSec{
     display: flex;
     background: rgb(255, 255, 255);
-    width: 22rem;
+    width: 24rem;
     border-radius: 4rem;
     height: 3rem;
     margin-top: 1rem;
@@ -45,4 +45,16 @@ margin-right: 3rem;
 }
 .Ava{
     margin-left: -1px;
+}
+.SearchComp{
+    display: flex;
+}
+.searchbtn{
+    height: 48px;
+    width: 80px;
+    margin-top: 1rem;
+    margin-left: -5rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    border: 1px solid white;
 }

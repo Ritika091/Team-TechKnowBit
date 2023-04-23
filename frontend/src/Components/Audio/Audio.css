@@ -26,6 +26,9 @@ select {
   box-sizing: border-box;
   
 }
+.aud_left textarea{
+    resize: none;
+}
 .aud_left{
     flex-direction: column;
     margin-left: 7rem;
