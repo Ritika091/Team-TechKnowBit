@@ -84,4 +84,11 @@ router.get('/podcasts/:podcastId',VerifyLogin,(req,res)=>{
     return res.status(404).json({error:'Podcast not found'})
    })
 })
+router.get('/likedpodcasts',VerifyLogin,(req,res)=>{
+    PODCASTS.find({likes:{$in:req.user._id}})
+    .then(result=>{
+        return res.json(result)
+    })
+    .catch(err=>console.log(err))
+})
 module.exports=router
