@@ -20,7 +20,7 @@ export default function PodcastInfo() {
     console.log(podcastid)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/podcasts/${podcastid}`,{
+        fetch(`/podcasts/${podcastid}`,{
             headers:{
                 'Content-Type':'application/json',
                 'Authorization':"Bearer "+localStorage.getItem("jwt")
@@ -34,7 +34,7 @@ export default function PodcastInfo() {
     },[])
 
     const likePodcast = (id)=>{
-        fetch('http://localhost:5000/like',{
+        fetch('/like',{
             method:"put",
             headers:{
                 'Content-Type':'application/json',
@@ -60,7 +60,7 @@ export default function PodcastInfo() {
     }
 
     const unlikePodcast = (id)=>{
-        fetch('http://localhost:5000/unlike',{
+        fetch('/unlike',{
             method:"put",
             headers:{
                 "Content-Type":"application/json",

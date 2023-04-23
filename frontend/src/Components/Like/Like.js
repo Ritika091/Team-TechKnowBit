@@ -7,7 +7,7 @@ import albumpic from '../../assets/podcast.jpg'
 export default function Like() {
   const[likePods,setLikePods]=useState([])
   useEffect(()=>{
-   fetch('http://localhost:5000/likedpodcasts',{
+   fetch('/likedpodcasts',{
     headers:{
       'Content-Type':'application/json',
       'Authorization':'Bearer '+localStorage.getItem('jwt')

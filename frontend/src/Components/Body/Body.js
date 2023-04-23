@@ -5,7 +5,7 @@ import albumpic from '../../assets/podcast.jpg'
 function Body() {
     const[podcasts,setPodcasts]=useState([])
     const fetchPodcasts=()=>{
-        fetch('http://localhost:5000/podcasts',{
+        fetch('/podcasts',{
             method:'GET',
             headers:{
                 'Content-Type':'application/json',

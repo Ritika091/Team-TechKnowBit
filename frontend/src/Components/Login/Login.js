@@ -10,7 +10,7 @@ export default function Login() {
   const[message,setMessage]=useState("");
 
   const LoginData=()=>{
-    fetch("http://localhost:5000/login",{
+    fetch("/login",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

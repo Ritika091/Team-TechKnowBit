@@ -32,7 +32,7 @@ export default function Audio() {
           .catch((err) => console.log(err));
       };
       const addAudioPodcast=()=>{
-        fetch('http://localhost:5000/createpodcasts',{
+        fetch('/createpodcasts',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',

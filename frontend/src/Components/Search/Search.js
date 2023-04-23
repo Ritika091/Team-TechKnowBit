@@ -12,7 +12,7 @@ export default function Search() {
   const[result,setResult]=useState("");
   const[errMessage,setErrMessage]=useState("");
     const fetchPodcasts=()=>{
-        fetch('http://localhost:5000/podcasts',{
+        fetch('/podcasts',{
             method:'GET',
             headers:{
                 'Content-Type':'application/json',

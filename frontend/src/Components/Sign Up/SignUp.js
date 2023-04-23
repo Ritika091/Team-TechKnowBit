@@ -11,7 +11,7 @@ export default function SignUp() {
   const[message,setMessage]=useState("");
   const Navigate=useNavigate();
   const postData=()=>{
-    fetch("http://localhost:5000/signup",{
+    fetch("/signup",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
