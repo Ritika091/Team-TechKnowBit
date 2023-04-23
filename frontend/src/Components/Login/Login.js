@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom'
-import googleimg from '../../assets/google.png'
 import logo from '../../assets/logo.png'
 export default function Login() {
 
@@ -43,14 +42,6 @@ export default function Login() {
     <div className='Login'>
           <img src={logo} alt=""  className='logo'/>
         <div className="LoginForm">
-          
-            <div className="Google">
-                <button className='Googlebtn'>
-                <img src={googleimg} alt="" />
-                    Sign in with Google </button>
-            </div>
-            <hr />
-        <span className='Or'>&nbsp;&nbsp;OR</span>
             <p className='message'>{message}</p>
         <div>
            <input type="email" name='email' id='email' placeholder='Enter email' onChange={(e)=>{setEmail(e.target.value)}}/>
