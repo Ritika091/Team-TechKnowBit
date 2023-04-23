@@ -57,6 +57,7 @@ select {
     left: 7rem;
     background: linear-gradient(to bottom right, #201818, #451a1a);
     color: white;
+    cursor: pointer;
 }
 .Uploadbtn:hover{
     background: linear-gradient(to bottom right, #451a1a, #201818);

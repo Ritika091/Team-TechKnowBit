@@ -82,7 +82,7 @@ addVideoPodcast();
            </div>
            <div>
            <h2>Type</h2>
-             <input type="text" placeholder='Enter the type....' onChange={(e)=>setType(e.target.value)}/>
+             <input type="text" placeholder=''  value={"video"} />
              </div>
              <div>
              <h2>Speaker</h2>
