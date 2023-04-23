@@ -12,28 +12,11 @@
 border: 1px solid white;
 background: #fff;
 width: 22rem;
-height: 27rem;
+height: 20rem;
 transform: translate(-50%, -50%);
 position: absolute;
 top: 50%;
 left: 75%;
-}
-.Googlebtn {
-    height: 2.5rem;
-    border-radius: 6rem;
-    display: flex;
-    background: transparent;
-    border: 1px solid #999;
-    font-weight: 700;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    width: 17rem;
-    margin: 30px 39px;
-    font-size: 15px;
-}
-.Googlebtn img{
-    width: 3rem;
 }
 .LoginForm input{
     background: transparent;
@@ -64,17 +47,6 @@ left: 75%;
 }
 .logo{
     width: 6rem;
-}
-.Or{
-    display: block;
-    width: 40px;
-    background-color: #fff;
-    font-size: 15px;
-    margin-top: -23px;
-    margin-left: 10rem;
-}
-hr{
-    width: 18rem;
 }
 .message{
     text-align: center;

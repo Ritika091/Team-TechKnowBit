@@ -109,7 +109,7 @@ export default function PodcastInfo() {
                     <p>{pod.description}</p>
                 </div>
                 <div className="Likes">
-                <h6>{pod?.likes?.length} likes</h6>
+                <h4>{pod?.likes?.length} likes</h4>
                 {pod?.likes?.includes(JSON.parse(localStorage.getItem("users"))._id)? 
                 <FavoriteIcon fontSize='large' color='error' onClick={()=>{unlikePodcast(pod._id)}}/>
                 :
