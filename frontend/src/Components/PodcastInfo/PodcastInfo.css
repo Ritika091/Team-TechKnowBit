@@ -27,7 +27,7 @@
 }
 .det h1{
     font-size: 42px;
-    padding-left: 15rem;
+    padding-left: 3rem;
     color: white;
 }
 .det h3{
@@ -45,7 +45,8 @@
     color: white;
 }
 .playIcon{
-    margin-left: 25rem;
+    margin-left: auto;
+    margin-right: 2rem;
     margin-top: 4rem;
     font-size: 6rem !important;
     cursor: pointer;
@@ -58,4 +59,7 @@
         text-align: end;
         margin-top: -4rem;
         margin-right: 5rem;
+}
+.PostcardDescription p{
+    width: 70rem;
 }

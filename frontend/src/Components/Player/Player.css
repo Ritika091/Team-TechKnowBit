@@ -12,6 +12,8 @@ width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 2rem;
+    width: 4rem;
+    height: 4rem;
 }
 .Player_name{
     display: flex;
@@ -21,6 +23,8 @@ width: 100%;
     font-weight: bolder;
     margin-bottom: 0.4rem;
     font-size: larger;
+    width: 9rem;
+    font-size: 14px;
 }
 .track-info{
     margin-left: 2rem;
