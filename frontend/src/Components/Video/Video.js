@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Video.css'
 import Sidebar from '../Sidebar/Sidebar'
 import UpperNav from '../UpperNav/UpperNav'
+import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 
 export default function Audio() {
     const[videoUrl,setVideoUrl]=useState('');
@@ -88,7 +89,7 @@ addVideoPodcast();
             }}/>
                </div>
                
-               <button className='Uploadbtn' onClick={()=>getPostDetails()}>Upload</button>
+               <button className='Uploadbtn'  onClick={() => getPostDetails()}> <CloudUploadRoundedIcon/> Upload </button>
                
        </div>
         </div>

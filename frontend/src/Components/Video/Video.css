@@ -51,6 +51,9 @@ select {
     position: relative;
     top: 10rem;
     left: 7rem;
-    background-color: #09d952;
-    border: 1px solid #d88694;
+    background: linear-gradient(to bottom right, #201818, #451a1a);
+    color: white;
+}
+.Uploadbtn:hover{
+    background: linear-gradient(to bottom right, #451a1a, #201818);
 }
