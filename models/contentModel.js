@@ -25,6 +25,9 @@ const PodcastSchema=new mongoose.Schema({
     },
     videoFile:{
         type:String
-    }
+    },
+    likes:[{
+        type:ObjectId,ref:"User"
+    }],
 })
 mongoose.model('PODCASTS',PodcastSchema)
