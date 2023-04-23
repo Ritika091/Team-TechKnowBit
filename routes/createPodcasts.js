@@ -7,7 +7,7 @@ const VerifyLogin = require('../middlewares/VerifyLogin')
 router.use(cors())
 router.get('/podcasts',VerifyLogin,(req,res)=>{
     PODCASTS.find()
-    .sort({id:-1})
+    .sort({_id:-1})
     .then(data=>
         {
             return res.status(200).json(data)
