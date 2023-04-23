@@ -32,7 +32,7 @@ export default function Like() {
         <p className='Likepodtitle'>{like.title}</p>
         <p className='Likepodspeaker'>{like.speaker}</p>
         <p className='Likepodtype'>{like.type}</p>
-        
+        <h4 className='podlik'>{like?.likes?.length} likes</h4>
         
   <Link to={`/podcasts/${like._id}`}><button className='Likepodbtn'>Show details</button></Link>
         <br />

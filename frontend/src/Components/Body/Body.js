@@ -36,6 +36,7 @@ function Body() {
         <p className='podtitle'>{pods.title}</p>
         <p className='podspeaker'>{pods.speaker}</p>
         <p className='podtype'>{pods.type}</p>
+        <h4 className='podlik'>{pods?.likes?.length} likes</h4>
         
         <Link to={`/podcasts/${pods._id}`}><button className='podbtn'>Show details</button></Link>
         
