@@ -48,12 +48,10 @@ export default function Search() {
         <div className="nav">
           <div className="SearchComp">
          <div className="SearchSec">
-       <SearchIcon className='searchIcon' onClick={()=>{searchPodcasts();
-     
-       }}/>
+       <SearchIcon className='searchIcon'/>
        <input type="text" placeholder="What do you want to listen?" value={searchInput} name="search" onChange={(e)=>setSearchInput(e.target.value)}></input>
        </div>
-       <button className='searchbtn'>Search</button>
+       <button className='searchbtn' onClick={()=>{searchPodcasts()}}>Search</button>
        </div>
       
        <div className="profile">
