@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './Player.css'
 import thumbnail from '../../assets/podcast.jpg'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -9,7 +9,7 @@ import { playerContext } from '../../context';
 
 export default function Player({audioref,showPlayer,setShowPlayer,data}) {
   const{isplaying,setIsplaying}=useContext(playerContext)
-
+  const clickRef = useRef()
   const play=()=>{
     audioref.current.play()
     setIsplaying(true)
@@ -17,6 +17,14 @@ export default function Player({audioref,showPlayer,setShowPlayer,data}) {
   const pause=()=>{
     audioref.current.pause()
     setIsplaying(false)
+  }
+  const checkWidth = (e)=>
+  {
+    let width = clickRef.current.clientWidth;
+    const offset = e.nativeEvent.offsetX;
+    const divprogress = offset / width * 100;
+    audioref.current.currentTime = divprogress / 100 * data.length;
+
   }
   return (
     <div className='Player'>
@@ -38,7 +46,12 @@ export default function Player({audioref,showPlayer,setShowPlayer,data}) {
             }
           <SkipNextRoundedIcon fontSize='large'/>
         </div>
-        <progress className='Progress' value="100" max="100"></progress>
+
+        <div className="navigation">
+        <div className="navigation_wrapper" onClick={checkWidth} ref={clickRef}></div>
+        <div className="seek_bar" style={{width: `${data.progress+"%"}`}}></div>
+        {/* <progress className='Progress'  ></progress> */}
+        </div>
         
     </div>
   )

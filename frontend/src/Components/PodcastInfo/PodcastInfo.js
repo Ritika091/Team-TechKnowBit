@@ -85,6 +85,13 @@ export default function PodcastInfo() {
       })
   }
 
+  const onPlaying = () => {
+    const duration = audioref.current.duration;
+    const ct = audioref.current.currentTime;
+
+    setPod({ ...pod, "progress": ct / duration * 100, "length": duration })
+  }
+
   return (
     <div className='PodcastInfo'>
             <Sidebar/>
@@ -136,7 +143,7 @@ export default function PodcastInfo() {
                 <h2>Listen to this podcast: </h2>
                 {
                     pod.audioFile?
-                    <audio  ref={audioref}>
+                    <audio  ref={audioref}  onTimeUpdate={onPlaying}>
                     <source src={pod.audioFile}/>
                     </audio>
                     :
