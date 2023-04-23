@@ -12,7 +12,7 @@
 border: 1px solid white;
 background: #fff;
 width: 22rem;
-height: 20rem;
+height: 24rem;
 transform: translate(-50%, -50%);
 position: absolute;
 top: 50%;
@@ -51,4 +51,11 @@ left: 75%;
 .message{
     text-align: center;
     color: red;
+}
+.logoDiv{
+    text-align: center;
+    padding-top: 0.8rem;
+}
+.logoform{
+    width: 4rem;
 }
