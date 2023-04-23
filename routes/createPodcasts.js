@@ -51,4 +51,12 @@ if(!audioFile && videoFile){
     .catch(err=>console.log(err))
 }
 })
+router.get('/searchPodcasts',(req,res)=>{
+    const{title,speaker,category}=req.body
+    PODCASTS.find({$or:[{title:title},{speaker:speaker},{category:category}]})
+    .then(data=>{
+        return res.status(200).json(data)
+    })
+    .catch(err=>console.log(err))
+})
 module.exports=router
