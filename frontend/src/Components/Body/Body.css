@@ -5,6 +5,7 @@
 .all_podcasts{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10rem;
 }
 .podcast_audio{
     padding: 1rem 2rem;
