@@ -37,7 +37,7 @@ function Body() {
         <p className='podspeaker'>{pods.speaker}</p>
         <p className='podtype'>{pods.type}</p>
         
-        <Link to={pods.audioFile?pods.audioFile:pods.videoFile}><button className='podbtn'>Show details</button></Link>
+        <Link to={`/podcasts/${pods._id}`}><button className='podbtn'>Show details</button></Link>
         
         <br />
         </div>

@@ -10,10 +10,11 @@ import Player from '../Player/Player';
 export default function PodcastInfo() {
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
+    const[videoLink,setVideoLink]=useState("");
     console.log(podcastid)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/podcast/${podcastid}`,{
+        fetch(`http://localhost:5000/podcasts/${podcastid}`,{
             headers:{
                 'Content-Type':'application/json',
                 'Authorization':"Bearer "+localStorage.getItem("jwt")
@@ -22,9 +23,12 @@ export default function PodcastInfo() {
         .then((res)=>res.json())
         .then((result)=>{
             console.log(result)
-            setPod(result.pod)
+            setPod(result)
+            if(!result.audioFile){
+                setVideoLink(result.videoFile)
+            }
         })
-    })
+    },[])
 
   return (
     <div className='PodcastInfo'>
@@ -35,16 +39,29 @@ export default function PodcastInfo() {
                 <div className="PodImgDetail">
                     <img src={Pic} alt="" />
                     <div className="det">
-                    <p>Type</p>
-                    <h1>Title</h1>
-                    <h4 className='speak'>Speaker</h4>
-                    <h4 className='cat'>Category</h4>
+                    <p>{pod.type}</p>
+                    <h1>{pod.title}</h1>
+                    <h4 className='speak'>{pod.speaker}</h4>
+                    <h4 className='cat'>{pod.category}</h4>
                     </div>
                     <PlayCircleFilledIcon className='playIcon' />
                 </div>
                 <div className="PostcardDescription">
                     <h1>Description</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quas id nobis omnis, vitae ea officiis ab in praesentium veniam voluptatibus? Consequatur quia libero dolore non facere tenetur odit, saepe eligendi enim molestiae rerum quos accusantium quam nobis suscipit magnam ratione. Assumenda molestiae sequi quos sit dolores architecto debitis accusamus, similique impedit recusandae natus doloribus, porro consequuntur labore nostrum, nisi fugiat! Dolores, laudantium veritatis ipsum minus beatae reprehenderit laboriosam atque iusto est deleniti explicabo quae maiores temporibus quas ex doloribus officia? Id ex asperiores quas deserunt quos inventore suscipit culpa dicta expedita illum magni odio voluptates eveniet omnis qui, voluptatum maiores hic doloremque ut doloribus? Esse pariatur asperiores assumenda, molestias praesentium dolor earum, velit explicabo culpa aliquid numquam voluptas sit optio necessitatibus totam aut vitae! Autem, sed animi.</p>
+                    <p>{pod.description}</p>
+                </div>
+                <div className="listen">
+                <h2>Listen to this podcast: </h2>
+                {
+                    pod.audioFile?
+                    <audio controls>
+                    <source src={pod.audioFile}/>
+                    </audio>
+                    :
+                    <video width='640' height='320' controls>
+                    <source src={videoLink} type='video/mp4'/>
+                    </video>
+                }
                 </div>
             </div>
             <Player/>

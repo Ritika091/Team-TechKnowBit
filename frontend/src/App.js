@@ -38,7 +38,7 @@ function App() {
         <Route exact path='/search' element={<Search/>}></Route>
         <Route exact path='/create/audio' element={<Audio/>}></Route>
         <Route exact path='/create/video' element={<Video/>}></Route>
-        <Route exact path='/podcast/:podcastid' element={<PodcastInfo/>}></Route>
+        <Route exact path='/podcasts/:podcastid' element={<PodcastInfo/>}></Route>
       </Routes>
     </div>
   );
