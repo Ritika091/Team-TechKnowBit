@@ -8,12 +8,13 @@ import Search from './Components/Search/Search';
 import { useEffect, useState } from 'react';
 import Audio from './Components/Audio/Audio';
 import Video from './Components/Video/Video';
+import { createContext } from 'react';
 import PodcastInfo from './Components/PodcastInfo/PodcastInfo';
 export const UserContext = createContext()
 
 
 function App() {
-  const {state,dispatch} = useContext(UserContext)
+  
   const[token,setToken]=useState("")
   const navigate=useNavigate();
   const checkToken=()=>{

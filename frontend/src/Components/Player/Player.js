@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Player.css'
 import thumbnail from '../../assets/thumbnail.jpg'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -6,6 +6,7 @@ import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 
 export default function Player() {
+  const[isPlaying,setIsPlaying]=useState(false)
   return (
     <div className='Player'>
         <div className='Player_name'>

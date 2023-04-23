@@ -53,32 +53,27 @@ if(!audioFile && videoFile){
 })
 
 router.put('/like',VerifyLogin,(req,res)=>{
-    Post.findByIdAndUpdate(req.body.postId,{
+    PODCASTS.findByIdAndUpdate(req.body.postId,{
         $push:{likes:req.user._id}
     },{
         new:true
-    }).exec((err,result)=>{
-        if(err){
-            return res.status(422).json({error:err})
-        }else{
-            res.json(result)
-        }
+    }).then((result)=>{
+        return res.json(result)
     })
+    .catch(err=>{return res.json(err)})
 })
 
+
 router.put('/unlike',VerifyLogin,(req,res)=>{
-    Post.findByIdAndUpdate(req.body.postId,{
+    PODCASTS.findByIdAndUpdate(req.body.postId,{
         $pull:{likes:req.user._id}
     },{
         new:true
-    }).exec((err,result)=>{
-        if(err){
-            return res.status(422).json({error:err})
-        }else{
-            res.json(result)
-        }
+    }).then((result)=>{
+            return res.json(result)
+        })
+        .catch(err=>{return res.json(err)})
     })
-})
 
 router.get('/podcasts/:podcastId',VerifyLogin,(req,res)=>{
    PODCASTS.findById({_id:req.params.podcastId})

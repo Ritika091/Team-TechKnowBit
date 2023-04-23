@@ -8,11 +8,9 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Player from '../Player/Player';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import {UserContext} from '../App'
 
 
 export default function PodcastInfo() {
-    const {state,dispatch} = useContext(UserContext)
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
     console.log(podcastid)
@@ -32,7 +30,7 @@ export default function PodcastInfo() {
     },[])
 
     const likePodcast = (id)=>{
-        fetch('/like',{
+        fetch('http://localhost:5000/like',{
             method:"put",
             headers:{
                 'Content-Type':'application/json',
@@ -44,21 +42,21 @@ export default function PodcastInfo() {
         }).then(res=>res.json())
         .then(result=>{
                  //   console.log(result)
-          const newData = data.map(pod=>{
-              if(pod._id==result._id){
-                  return result
-              }else{
-                  return pod
-              }
-          })
-          setPod(newData)
+        //   const newData = pod.map(pods=>{
+        //       if(pods._id===result._id){
+        //           return result
+        //       }else{
+        //           return pods
+        //       }
+        //   })
+          setPod(result)
         }).catch(err=>{
             console.log(err)
         })
     }
 
     const unlikePodcast = (id)=>{
-        fetch('/unlike',{
+        fetch('http://localhost:5000/unlike',{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
@@ -70,14 +68,14 @@ export default function PodcastInfo() {
         }).then(res=>res.json())
         .then(result=>{
           //   console.log(result)
-          const newData = data.map(pod=>{
-              if(pod._id==result._id){
-                  return result
-              }else{
-                  return pod
-              }
-          })
-          setPod(newData)
+        //   const newData = pod.map(pods=>{
+        //       if(pods._id===result._id){
+        //           return result
+        //       }else{
+        //           return pods
+        //       }
+        //   })
+          setPod(result)
         }).catch(err=>{
           console.log(err)
       })
@@ -104,12 +102,11 @@ export default function PodcastInfo() {
                     <p>{pod.description}</p>
                 </div>
                 <div className="Likes">
-                <h6>{pod.likes.length} likes</h6>
-                {pod.likes.includes(state._id)
-                ? 
-                <FavoriteBorderIcon fontSize='large' onClick={()=>{likePodcast(pod._id)}}/>
-                :
+                <h6>{pod?.likes?.length} likes</h6>
+                {pod?.likes?.includes(JSON.parse(localStorage.getItem("users"))._id)? 
                 <FavoriteIcon fontSize='large' color='error' onClick={()=>{unlikePodcast(pod._id)}}/>
+                :
+                <FavoriteBorderIcon fontSize='large' onClick={()=>{likePodcast(pod._id)}}/>
                 }
                 </div>
                 <div className="listen">
