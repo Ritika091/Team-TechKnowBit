@@ -20,11 +20,11 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/createPodcasts'))
 app.use(express.static(path.join(__dirname,'./frontend/build')))
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./frontend/build/index.html'),
+    res.sendFile(path.join(__dirname,'./frontend/build/index.html')),
     function(err){
         res.status(500).send(err)
     }
-    );
+    
 })
 app.listen(5000||process.env.port,()=>{
     console.log('Server is active....')
