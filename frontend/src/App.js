@@ -10,6 +10,7 @@ import Audio from './Components/Audio/Audio';
 import Video from './Components/Video/Video';
 import { createContext } from 'react';
 import PodcastInfo from './Components/PodcastInfo/PodcastInfo';
+import Like from './Components/Like/Like';
 export const UserContext = createContext()
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route exact path='/create/audio' element={<Audio/>}></Route>
         <Route exact path='/create/video' element={<Video/>}></Route>
         <Route exact path='/podcasts/:podcastid' element={<PodcastInfo/>}></Route>
+        <Route exact path='/like' element={<Like/>}></Route>
       </Routes>
     </div>
   );

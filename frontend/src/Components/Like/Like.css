@@ -1,0 +1,75 @@
+.Like{
+        display: flex;
+        overflow-x: hidden;
+}
+.LikeContent{
+    margin-left: 15rem;
+}
+.Likepodcast_audio{
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    width: 17%;
+    margin-right: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+
+}
+.Likepodcast_audio:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.Likepodcast_audio img{
+    width: 150px;
+    margin-left: 2.5rem;
+
+}
+
+.Likepodtitle{
+    font-size: 25px;
+    margin-top: 0px;
+    font-weight: 640;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.Likepodspeaker, .Likepodtype{
+    font-size: 17px;
+}
+
+.Likepodtype{
+    text-align: right;
+    margin-top: -2.5rem;
+    
+}   
+
+.Likepodspeaker{
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.Likepodbtn{
+    width: 130px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 42px;
+    background-color: #c95353;
+    border-radius: 2rem;
+    border: 1px solid #c95353;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.Likepodbtn:hover{
+    background-color: #e34343;
+}
+
+.Likepodcast_audio a{
+    text-decoration: none;
+
+}

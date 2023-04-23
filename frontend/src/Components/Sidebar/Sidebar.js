@@ -29,10 +29,12 @@ export default function Sidebar() {
                 {/* Create */}
             </li>
             <Dropdown/>
+            <Link to='/like'>
             <li>
-                <ThumbUpOffAltOutlinedIcon className='icon' />
+             <ThumbUpOffAltOutlinedIcon className='icon' />
                 My Likes
             </li>
+            </Link>  
         </ul>
       <Link to='/logout'> <button className='logoutbtn'>Logout</button></Link> 
     </div>

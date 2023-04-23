@@ -13,7 +13,7 @@ export default function Home() {
         <div className="home_rightcontent">
         <UpperNav/>
         <Body/>
-        <Player/>
+        {/* <Player/> */}
         </div>
         
     </div>
