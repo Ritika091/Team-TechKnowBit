@@ -11,7 +11,7 @@ export default function Audio() {
     const[title,setTitle]=useState('');
     const[description,setDescription]=useState('');
     const[category,setCategory]=useState('');
-    const[type,setType]=useState('');
+    const[type,setType]=useState('video');
     const[speaker,setSpeaker]=useState('');
     const navigator=useNavigate();
     const getPostDetails = () => {
