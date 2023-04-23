@@ -8,8 +8,11 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Player from '../Player/Player';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import {UserContext} from '../App'
+
 
 export default function PodcastInfo() {
+    const {state,dispatch} = useContext(UserContext)
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
     console.log(podcastid)
@@ -27,6 +30,58 @@ export default function PodcastInfo() {
             setPod(result)
         })
     },[])
+
+    const likePodcast = (id)=>{
+        fetch('/like',{
+            method:"put",
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization':"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+                 //   console.log(result)
+          const newData = data.map(pod=>{
+              if(pod._id==result._id){
+                  return result
+              }else{
+                  return pod
+              }
+          })
+          setPod(newData)
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
+    const unlikePodcast = (id)=>{
+        fetch('/unlike',{
+            method:"put",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+          //   console.log(result)
+          const newData = data.map(pod=>{
+              if(pod._id==result._id){
+                  return result
+              }else{
+                  return pod
+              }
+          })
+          setPod(newData)
+        }).catch(err=>{
+          console.log(err)
+      })
+  }
 
   return (
     <div className='PodcastInfo'>
@@ -49,8 +104,13 @@ export default function PodcastInfo() {
                     <p>{pod.description}</p>
                 </div>
                 <div className="Likes">
-                <FavoriteBorderIcon fontSize='large'/>
-                <FavoriteIcon fontSize='large' color='error'/>
+                <h6>{pod.likes.length} likes</h6>
+                {pod.likes.includes(state._id)
+                ? 
+                <FavoriteBorderIcon fontSize='large' onClick={()=>{likePodcast(pod._id)}}/>
+                :
+                <FavoriteIcon fontSize='large' color='error' onClick={()=>{unlikePodcast(pod._id)}}/>
+                }
                 </div>
                 <div className="listen">
                 <h2>Listen to this podcast: </h2>
