@@ -1,4 +1,5 @@
 const mongoose=require('mongoose')
+const{ObjectId}=mongoose.Schema.Types
 const PodcastSchema=new mongoose.Schema({
     title:{
         type:String,
@@ -27,7 +28,7 @@ const PodcastSchema=new mongoose.Schema({
         type:String
     },
     likes:[{
-        type:ObjectId,ref:"User"
+        type:ObjectId,ref:"USERS"
     }],
 })
 mongoose.model('PODCASTS',PodcastSchema)

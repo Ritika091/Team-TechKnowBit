@@ -1,6 +1,5 @@
 const express=require('express');
 const mongoose=require('mongoose');
-const {ObjectId}=mongoose.Schema.Types;
 const UserSchema=new mongoose.Schema({
     email:{
         type:String,
@@ -14,8 +13,6 @@ const UserSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    likedPodcasts:[{
-        type:ObjectId,ref:"PODCASTS"
-    }]
+
 })
 mongoose.model('USERS',UserSchema)
