@@ -14,6 +14,17 @@ router.get('/podcasts',VerifyLogin,(req,res)=>{
         })
         .catch(err=>console.log(err))
 })
+
+router.get('/likedpodcasts',VerifyLogin,(req,res)=>{
+    PODCASTS.find()
+    .sort({_id:-1})
+    .then(data=>
+        {
+            return res.status(200).json(data)
+        })
+        .catch(err=>console.log(err))
+})
+
 router.post('/createpodcasts',VerifyLogin,(req,res)=>{
 const{title,description,category,type,speaker,audioFile,videoFile}=req.body
 if(!title || !description || !category || !type || !speaker){
