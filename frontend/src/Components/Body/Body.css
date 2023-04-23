@@ -69,6 +69,7 @@
     margin-left: 42px;
     background-color: #c95353;
     border-radius: 2rem;
+    border: 1px solid #c95353;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     font-size: 16px;
     color: #fff;

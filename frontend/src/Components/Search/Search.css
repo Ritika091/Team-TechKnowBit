@@ -115,6 +115,7 @@
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     font-size: 16px;
     color: #fff;
+    border: 1px solid #c95353;
     cursor: pointer;
 }
 .resbtn:hover{
