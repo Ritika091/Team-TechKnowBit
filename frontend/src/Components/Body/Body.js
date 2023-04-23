@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Body.css'
 import {Link} from 'react-router-dom'
+import albumpic from '../../assets/podcast.jpg'
 function Body() {
     const[podcasts,setPodcasts]=useState([])
     const fetchPodcasts=()=>{
@@ -30,10 +31,13 @@ function Body() {
        
        
         <div className="podcast_audio">
-        <p>{pods.title}</p>
-        <p>{pods.category}</p>
-        <p>{pods.speaker}</p>
-        <Link to={pods.audioFile?pods.audioFile:pods.videoFile}>Click Me!</Link>
+            <img src={albumpic}></img>
+        <p className='podtitle'>{pods.title}</p>
+        <p className='podspeaker'>{pods.speaker}</p>
+        <p className='podtype'>{pods.type}</p>
+        
+        <Link to={pods.audioFile?pods.audioFile:pods.videoFile}><button className='podbtn'>Show details</button></Link>
+        
         <br />
         </div>
   

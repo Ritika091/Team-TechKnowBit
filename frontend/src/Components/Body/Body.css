@@ -1,9 +1,75 @@
 .Body{
     margin-left: 15rem;
+    
 }
 .all_podcasts{
     display: flex;
+    flex-wrap: wrap;
 }
 .podcast_audio{
     padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-left: 0.5rem;
+    width: 17%;
+    margin-right: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+
+}
+.podcast_audio:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.podcast_audio img{
+    width: 150px;
+    margin-left: 2.5rem;
+
+}
+
+.podtitle{
+    font-size: 25px;
+    margin-top: 0px;
+    font-weight: 640;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.podspeaker, .podtype{
+    font-size: 17px;
+}
+
+.podtype{
+    text-align: right;
+    margin-top: -2.5rem;
+    
+}   
+
+.podspeaker{
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.podbtn{
+    width: 130px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 42px;
+    background-color: #c95353;
+    border-radius: 2rem;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.podbtn:hover{
+    background-color: #e34343;
+}
+
+.podcast_audio a{
+    text-decoration: none;
+
 }
