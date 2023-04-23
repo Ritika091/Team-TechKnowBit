@@ -3,6 +3,7 @@ import './Video.css'
 import Sidebar from '../Sidebar/Sidebar'
 import UpperNav from '../UpperNav/UpperNav'
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
+import { useNavigate } from 'react-router-dom';
 
 export default function Audio() {
     const[videoUrl,setVideoUrl]=useState('');
@@ -12,6 +13,7 @@ export default function Audio() {
     const[category,setCategory]=useState('');
     const[type,setType]=useState('');
     const[speaker,setSpeaker]=useState('');
+    const navigator=useNavigate();
     const getPostDetails = () => {
         console.log(video);
         const data = new FormData();
@@ -45,7 +47,11 @@ export default function Audio() {
                 videoFile:videoUrl
             })
         }).then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{console.log(data);
+        if(data.message){
+          navigator('/')
+        }
+        })
         .catch(err=>console.log(err))
       }
       useEffect(()=>{
