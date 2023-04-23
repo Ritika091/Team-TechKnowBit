@@ -2,8 +2,8 @@ import React, { useContext, useRef, useState } from 'react'
 import './Player.css'
 import thumbnail from '../../assets/podcast.jpg'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
-import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+import FastRewindIcon from '@mui/icons-material/FastRewind';
 import PauseIcon from '@mui/icons-material/Pause';
 import { playerContext } from '../../context';
 
@@ -37,14 +37,28 @@ export default function Player({audioref,showPlayer,setShowPlayer,data}) {
 
         </div>
         <div className="resume">
-            <SkipPreviousRoundedIcon fontSize='large'/>
+            <FastRewindIcon fontSize='large' onClick={()=>{
+              if(audioref.current.currentTime<5){
+                audioref.current.currentTime=0;
+              }
+              else{
+                audioref.current.currentTime=audioref.current.currentTime-5;
+              }
+            }}/>
             {isplaying ? 
            <PauseIcon onClick={()=>pause()} fontSize='large' />
             :
             <PlayArrowIcon fontSize='large' onClick={()=>play()}  />
           
             }
-          <SkipNextRoundedIcon fontSize='large'/>
+          <FastForwardIcon fontSize='large' onClick={()=>{
+            if((audioref.current.duration-audioref.current.currentTime)<5){
+              audioref.current.currentTime=0;
+            }
+            else{
+              audioref.current.currentTime=audioref.current.currentTime+5;
+            }
+          }}/>
         </div>
 
         <div className="navigation">
