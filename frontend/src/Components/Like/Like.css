@@ -4,6 +4,8 @@
 }
 .LikeContent{
     margin-left: 15rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .Likepodcast_audio{
     padding: 1rem 2rem;
