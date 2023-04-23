@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.e32dd6eb.css",
+    "main.css": "/static/css/main.406ba155.css",
     "main.js": "/static/js/main.2bb1211b.js",
     "static/media/logo.png": "/static/media/logo.46b53f0ac2454804a5ea.png",
     "static/media/podcast.jpg": "/static/media/podcast.be1a676047e8f70c796d.jpg",
     "static/media/background.avif": "/static/media/background.8a4327e61ebd1556428b.avif",
     "index.html": "/index.html",
-    "main.e32dd6eb.css.map": "/static/css/main.e32dd6eb.css.map",
+    "main.406ba155.css.map": "/static/css/main.406ba155.css.map",
     "main.2bb1211b.js.map": "/static/js/main.2bb1211b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e32dd6eb.css",
+    "static/css/main.406ba155.css",
     "static/js/main.2bb1211b.js"
   ]
 }
