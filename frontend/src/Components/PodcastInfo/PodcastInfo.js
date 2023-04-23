@@ -9,9 +9,8 @@ import Player from '../Player/Player';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
+
 export default function PodcastInfo() {
-    const[showPlayer,setShowPlayer]=useState(false)
-    const audioref=useRef()
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
     console.log(podcastid)
@@ -30,6 +29,58 @@ export default function PodcastInfo() {
         })
     },[])
 
+    const likePodcast = (id)=>{
+        fetch('http://localhost:5000/like',{
+            method:"put",
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization':"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+                 //   console.log(result)
+        //   const newData = pod.map(pods=>{
+        //       if(pods._id===result._id){
+        //           return result
+        //       }else{
+        //           return pods
+        //       }
+        //   })
+          setPod(result)
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
+    const unlikePodcast = (id)=>{
+        fetch('http://localhost:5000/unlike',{
+            method:"put",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+          //   console.log(result)
+        //   const newData = pod.map(pods=>{
+        //       if(pods._id===result._id){
+        //           return result
+        //       }else{
+        //           return pods
+        //       }
+        //   })
+          setPod(result)
+        }).catch(err=>{
+          console.log(err)
+      })
+  }
+
   return (
     <div className='PodcastInfo'>
             <Sidebar/>
@@ -44,24 +95,25 @@ export default function PodcastInfo() {
                     <h4 className='speak'>{pod.speaker}</h4>
                     <h4 className='cat'>{pod.category}</h4>
                     </div>
-                    <PlayCircleFilledIcon className='playIcon' onClick={()=>{audioref.current.play()
-                    setShowPlayer(true)    
-                }
-                    } />
+                    <PlayCircleFilledIcon className='playIcon' />
                 </div>
                 <div className="PostcardDescription">
                     <h1>Description</h1>
                     <p>{pod.description}</p>
                 </div>
                 <div className="Likes">
-                <FavoriteBorderIcon fontSize='large'/>
-                <FavoriteIcon fontSize='large' color='error'/>
+                <h6>{pod?.likes?.length} likes</h6>
+                {pod?.likes?.includes(JSON.parse(localStorage.getItem("users"))._id)? 
+                <FavoriteIcon fontSize='large' color='error' onClick={()=>{unlikePodcast(pod._id)}}/>
+                :
+                <FavoriteBorderIcon fontSize='large' onClick={()=>{likePodcast(pod._id)}}/>
+                }
                 </div>
                 <div className="listen">
                 <h2>Listen to this podcast: </h2>
                 {
                     pod.audioFile?
-                    <audio  ref={audioref}>
+                    <audio controls>
                     <source src={pod.audioFile}/>
                     </audio>
                     :
@@ -74,12 +126,7 @@ export default function PodcastInfo() {
                 }
                 </div>
             </div>
-            {
-                showPlayer?
-            <Player data={pod} showPlayer={showPlayer} setShowPlayer={setShowPlayer} audioref={audioref}/>
-            :
-            <p></p>
-}
+            <Player/>
         </div>
     </div>
   )
