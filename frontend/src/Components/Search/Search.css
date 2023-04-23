@@ -35,8 +35,8 @@
     color: white;
     height: 2.6rem;
     border-radius: 5rem;
-margin-left: auto;
-margin-right: 3rem;
+    margin-left: auto;
+    margin-right: 3rem;
     margin-top: -3rem;
 }
 .profile h3{
@@ -61,4 +61,65 @@ margin-right: 3rem;
 .search_results{
     margin-left: 15rem;
     margin-top: 2rem;
+}
+.res_podcasts{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10rem;
+}
+.result_card{
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-left: 0.5rem;
+    width: 17%;
+    margin-right: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+.result_card:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.result_card img{
+    width: 150px;
+    margin-left: 2.5rem;
+}
+.restitle{
+    font-size: 25px;
+    margin-top: 0px;
+    font-weight: 640;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.resspeaker, .rescat{
+    font-size: 17px;
+}
+.rescat{
+    text-align: right;
+    margin-top: -2.5rem;
+}
+.resspeaker{
+    font-weight: 500;
+    padding-top: 10px;
+}
+.resbtn{
+    width: 130px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 42px;
+    background-color: #c95353;
+    border-radius: 2rem;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+.resbtn:hover{
+    background-color: #e34343;
+}
+.result_card a{
+    text-decoration: none;
 }

@@ -4,6 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import Sidebar from '../Sidebar/Sidebar';
 import './Search.css'
 import { Link } from 'react-router-dom';
+import albumpic from '../../assets/podcast.jpg'
 
 export default function Search() {
   const[searchInput,setSearchInput]=useState("");
@@ -58,19 +59,23 @@ export default function Search() {
        <Avatar alt="Remy Sharp" src=""  className='Ava'/>
        <h3>{JSON.parse(localStorage.getItem("users")).userName}</h3>
        </div>
+       
        <div className="search_results">
        <h1>Search Results</h1>
        
       {result?
+      <div className="res_podcasts">
           <div className="result_card">
-          <p>{result.title}</p>
-          <p>{result.speaker}</p>
-          <p>{result.category}</p>
-          <Link to={result.audioFile?result.audioFile:result.videoFile}>Listen!</Link>
+            <img src={albumpic}></img>
+          <p className='restitle'>{result.title}</p>
+          <p className='resspeaker'>{result.speaker}</p>
+          <p className='rescat'>{result.category}</p>
+          <Link to={result.audioFile?result.audioFile:result.videoFile}><button className='resbtn'>Show details</button></Link>
+          </div>
           </div>
           :
           <p>{errMessage}</p>
-        
+          
       }
        </div>
     </div>
