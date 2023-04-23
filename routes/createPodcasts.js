@@ -52,7 +52,7 @@ if(!audioFile && videoFile){
 }
 })
 
-router.put('/like',requireLogin,(req,res)=>{
+router.put('/like',VerifyLogin,(req,res)=>{
     Post.findByIdAndUpdate(req.body.postId,{
         $push:{likes:req.user._id}
     },{
@@ -66,7 +66,7 @@ router.put('/like',requireLogin,(req,res)=>{
     })
 })
 
-router.put('/unlike',requireLogin,(req,res)=>{
+router.put('/unlike',VerifyLogin,(req,res)=>{
     Post.findByIdAndUpdate(req.body.postId,{
         $pull:{likes:req.user._id}
     },{
