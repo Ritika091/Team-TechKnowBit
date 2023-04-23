@@ -120,7 +120,7 @@ export default function PodcastInfo() {
                 <h2>Listen to this podcast: </h2>
                 {
                     pod.audioFile?
-                    <audio controls ref={audioref}>
+                    <audio  ref={audioref}>
                     <source src={pod.audioFile}/>
                     </audio>
                     :
