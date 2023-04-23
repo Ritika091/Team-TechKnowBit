@@ -126,7 +126,7 @@ export default function PodcastInfo() {
                 }
                 </div>
             </div>
-            <Player/>
+            <Player data={pod}/>
         </div>
     </div>
   )
