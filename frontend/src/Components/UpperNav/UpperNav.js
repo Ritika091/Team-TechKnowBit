@@ -7,7 +7,7 @@ export default function UpperNav() {
     <div className='UpperNav'>
        <div className="profile1">
        <Avatar alt="Remy Sharp" src=""  className='Ava'/>
-       <h3>{JSON.parse(localStorage.getItem("users")).userName}</h3>
+       <h3>{JSON.parse(localStorage.getItem("users"))?.userName}</h3>
        </div>
     </div>
   )

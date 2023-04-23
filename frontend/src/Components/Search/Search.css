@@ -58,3 +58,7 @@ margin-right: 3rem;
     cursor: pointer;
     border: 1px solid white;
 }
+.search_results{
+    margin-left: 15rem;
+    margin-top: 2rem;
+}

@@ -17,7 +17,6 @@ function App() {
     const token=localStorage.getItem('jwt');
     if(token){
       console.log('I have token');
-      setToken(token);
     }
     else{
       console.log("I dont have token");
