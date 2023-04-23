@@ -61,8 +61,8 @@ export default function PodcastInfo() {
                     </audio>
                     :
                 
-                    <video width='520' height='240' controls loop autoPlay>
-                    <source src={`$pod.videoFile`}/>
+                    <video src={pod.videoFile} controls width='640' height='320'>
+                
                     </video>
               
                 
