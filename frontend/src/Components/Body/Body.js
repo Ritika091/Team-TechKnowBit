@@ -24,6 +24,7 @@ function Body() {
     },[]);
   return (
     <div className='Body'>
+        <h2 className='welcome'>Hey There!</h2>
     <div className="all_podcasts">
     
 

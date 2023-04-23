@@ -2,6 +2,15 @@
     margin-left: 15rem;
     
 }
+.welcome{
+    text-align: left;   
+    margin-top: -80px; 
+    padding-left: 10px;
+    font-size: 35px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    color: whitesmoke;
+}
 .all_podcasts{
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +18,7 @@
 }
 .podcast_audio{
     padding: 1rem 2rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     margin-left: 0.5rem;
     width: 17%;
     margin-right: 1.5rem;
