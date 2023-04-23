@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './PodcastInfo.css'
 import { useParams } from 'react-router-dom'
 import Sidebar from '../Sidebar/Sidebar';
@@ -10,7 +10,6 @@ import Player from '../Player/Player';
 export default function PodcastInfo() {
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
-    const[videoLink,setVideoLink]=useState("");
     console.log(podcastid)
 
     useEffect(()=>{
@@ -24,9 +23,6 @@ export default function PodcastInfo() {
         .then((result)=>{
             console.log(result)
             setPod(result)
-            if(!result.audioFile){
-                setVideoLink(result.videoFile)
-            }
         })
     },[])
 
@@ -58,9 +54,12 @@ export default function PodcastInfo() {
                     <source src={pod.audioFile}/>
                     </audio>
                     :
-                    <video width='640' height='320' controls>
-                    <source src={videoLink} type='video/mp4'/>
+                
+                    <video width='520' height='240' controls loop autoPlay>
+                    <source src={`$pod.videoFile`}/>
                     </video>
+              
+                
                 }
                 </div>
             </div>
