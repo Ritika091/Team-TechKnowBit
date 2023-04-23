@@ -12,11 +12,11 @@ import { useContext } from 'react';
 import { playerContext } from '../../context';
 export default function PodcastInfo() {
     const{setIsplaying}=useContext(playerContext)
-
     const[pod,setPod]=useState("")
     const {podcastid} = useParams();
     const[showPlayer,setShowPlayer]=useState(false);
     const audioref=useRef();
+    const videoRef=useRef();
     console.log(podcastid)
 
     useEffect(()=>{
@@ -99,9 +99,25 @@ export default function PodcastInfo() {
                     <h4 className='speak'>{pod.speaker}</h4>
                     <h4 className='cat'>{pod.category}</h4>
                     </div>
-                    <PlayCircleFilledIcon className='playIcon' onClick={()=>{setShowPlayer(true);
+                    <PlayCircleFilledIcon className='playIcon' onClick={()=>{
+                        if(pod.audioFile){
+                        setShowPlayer(true);
                         audioref.current.play();
                     setIsplaying(true)
+                        }
+                        else{
+                            videoRef.current.play();
+                            const elem = videoRef.current
+      if(elem){ 
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /*  for Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /*  for IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
+                        }
                     }}/>
                 </div>
                 <div className="PostcardDescription">
@@ -125,7 +141,7 @@ export default function PodcastInfo() {
                     </audio>
                     :
                 
-                    <video src={pod.videoFile} controls width='640' height='320'>
+                    <video src={pod.videoFile} controls width='640' height='320' ref={videoRef}>
                 
                     </video>
               
