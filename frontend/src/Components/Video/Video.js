@@ -13,6 +13,7 @@ export default function Audio() {
     const[category,setCategory]=useState('');
     const[type,setType]=useState('video');
     const[speaker,setSpeaker]=useState('');
+    const[loader,setLoader]=useState(false);
     const navigator=useNavigate();
     const getPostDetails = () => {
         console.log(video);
@@ -50,6 +51,7 @@ export default function Audio() {
         .then(data=>{console.log(data);
         if(data.message){
           navigator('/')
+          setLoader(false);
         }
         })
         .catch(err=>console.log(err))
@@ -96,7 +98,13 @@ addVideoPodcast();
             }}/>
                </div>
                
-               <button className='Uploadbtn'  onClick={() => getPostDetails()}> <CloudUploadRoundedIcon/> Upload </button>
+               {loader?
+                <div class="loader"></div>
+                :
+              <button className='Uploadbtn'  onClick={() => {getPostDetails();
+              setLoader(true);
+              }}> <CloudUploadRoundedIcon/> Upload </button>
+              }
                
        </div>
         </div>

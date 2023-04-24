@@ -14,6 +14,7 @@ export default function Audio() {
     const[type,setType]=useState('audio');
     const[speaker,setSpeaker]=useState('');
     const navigator=useNavigate();
+    const[loader,setLoader]=useState(false);
     const getPostDetails = () => {
         console.log(audio);
         const data = new FormData();
@@ -50,6 +51,7 @@ export default function Audio() {
         .then(data=>{console.log(data);
         if(data.message){
           navigator('/')
+          setLoader(false);
         }})
         .catch(err=>console.log(err))
       }
@@ -93,9 +95,13 @@ addAudioPodcast();
                <input type="file" accept='audio/*' onChange={(e)=>{setAudio(e.target.files[0]);
             }}/>
                </div>
-               
-               <button className='Uploadbtn'  onClick={() => getPostDetails()}> <CloudUploadRoundedIcon/> Upload </button>
-               
+          {loader?
+                <div class="loader"></div>
+                :
+              <button className='Uploadbtn'  onClick={() => {getPostDetails();
+              setLoader(true);
+              }}> <CloudUploadRoundedIcon/> Upload </button>
+              }
        </div>
        
         </div>

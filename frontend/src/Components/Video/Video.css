@@ -61,3 +61,18 @@ select {
 .Uploadbtn:hover{
     background: linear-gradient(to bottom right, #451a1a, #201818);
 }
+.loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #451a1a;
+    border-radius: 50%;
+    height: 76px;
+    width: 76px;
+    margin-top: 6rem;
+    margin-left: 7rem;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
