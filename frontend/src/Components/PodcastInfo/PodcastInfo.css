@@ -64,5 +64,6 @@
     width: 70rem;
 }
 video{
-    padding-left: 20rem;
+    display: flex;
+    margin: auto;
   }
