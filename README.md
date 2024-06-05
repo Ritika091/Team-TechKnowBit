@@ -40,7 +40,7 @@ This project is an audio/video podcast player built with React and JavaScript. I
   <tr>
     <td align="center">
             <a href="https://github.com/faisalnazir7">
-              <img src="https://avatars.githubusercontent.com/u/73099635?v=4" width="100px" alt=""/><br />
+              <img src="https://avatars.githubusercontent.com/u/76447944?v=4" width="100px" alt=""/><br />
               <sub><b>Faisal Nazir</b></sub>
             </a><br/>
             <a href="https://github.com/faisalnazir7">
